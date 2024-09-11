@@ -1,0 +1,30 @@
+<h1>{{message}}</h1>
+
+<div id="table_users">
+    <table border="1px black">
+        <thead>
+            <tr id="table_headers">
+                <th>ID</th>
+                <th>NAME</th>
+                <th>USERNAME</th>
+                <th>PHONE</th>
+                <th>WEBSITE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users_list">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.website}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br>
+
+<h2>FORMULARIO PARA AÑADIR USUARIOS</h2>
+
+<app-user-form [user]="selected_user" (userAdded)="agregarUsuario($event)"></app-user-form>
